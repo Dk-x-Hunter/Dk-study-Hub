@@ -1,5 +1,1105 @@
-<!DOCTYPE html> 
-<html lang="en"> 
-<head> <meta charset="UTF-8"> 
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-<title>DK Study Hub | Class 11 NEB</title> <style> *{ margin:0; padding:0; box-sizing:border-box; } body{ font-family:Arial, sans-serif; background:#f6f8fc; color:#182033; } /* NAVBAR */ nav{ height:65px; background:white; display:flex; align-items:center; justify-content:space-between; padding:0 6%; border-bottom:1px solid #e8eaf0; position:sticky; top:0; z-index:1000; } .logo{ font-size:22px; font-weight:bold; color:#4f46e5; } .logo span{ color:#182033; } nav a{ text-decoration:none; color:#333; margin-left:25px; font-size:14px; } /* HERO */ .hero{ min-height:480px; padding:70px 20px 60px; text-align:center; background:linear-gradient(135deg,#eef2ff,#f5f3ff); } .tag{ display:inline-block; background:#e0e7ff; color:#4338ca; padding:8px 16px; border-radius:30px; font-size:13px; font-weight:bold; margin-bottom:20px; } .hero h1{ font-size:45px; line-height:1.15; margin-bottom:18px; } .hero h1 span{ color:#4f46e5; } .hero p{ max-width:650px; margin:auto; color:#687386; line-height:1.7; } /* SEARCH */ .search{ max-width:650px; height:58px; background:white; margin:30px auto; border-radius:15px; display:flex; align-items:center; padding:6px; box-shadow:0 10px 30px rgba(0,0,0,.08); } .search input{ flex:1; height:100%; border:0; outline:0; padding:0 15px; font-size:15px; } .search button{ height:100%; border:0; padding:0 22px; border-radius:11px; background:#4f46e5; color:white; cursor:pointer; font-weight:bold; } /* SLIDER */ .slider{ max-width:900px; height:150px; margin:35px auto 0; overflow:hidden; border-radius:20px; position:relative; } .slide{ height:150px; display:none; align-items:center; justify-content:center; flex-direction:column; color:white; padding:20px; } .slide.active{ display:flex; } .slide h2{ margin-bottom:8px; } .slide p{ opacity:.9; } .slide:nth-child(1){ background:linear-gradient(135deg,#4f46e5,#7c3aed); } .slide:nth-child(2){ background:linear-gradient(135deg,#0f766e,#14b8a6); } .slide:nth-child(3){ background:linear-gradient(135deg,#c2410c,#f97316); } /* CONTAINER */ .container{ max-width:1100px; margin:auto; padding:60px 20px; } .title{ text-align:center; margin-bottom:35px; } .title h2{ font-size:29px; } .title p{ color:#70798a; margin-top:8px; } /* ABOUT */ .about{ background:white; border-radius:20px; padding:35px; text-align:center; border:1px solid #e8eaf0; } .about p{ max-width:750px; margin:15px auto 0; color:#687386; line-height:1.7; } /* CURRICULUM */ .curriculum{ background:linear-gradient(135deg,#111827,#273449); color:white; padding:35px; border-radius:20px; display:flex; justify-content:space-between; align-items:center; gap:20px; } .curriculum p{ color:#cbd5e1; margin-top:8px; } .buttons{ display:flex; gap:10px; } .btn{ text-decoration:none; padding:13px 18px; border-radius:10px; font-size:14px; font-weight:bold; } .btn-white{ background:white; color:#111827; } .btn-outline{ border:1px solid #64748b; color:white; } /* SUBJECTS */ .subjects{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; } .subject{ background:white; border:1px solid #e8eaf0; border-radius:18px; padding:24px; text-decoration:none; color:#182033; transition:.25s; } .subject:hover{ transform:translateY(-5px); box-shadow:0 12px 30px rgba(0,0,0,.08); } .subject-icon{ width:52px; height:52px; border-radius:14px; background:#eef2ff; display:flex; align-items:center; justify-content:center; font-size:27px; margin-bottom:15px; } .subject h3{ margin-bottom:7px; } .subject p{ color:#737c8c; font-size:13px; line-height:1.5; } .arrow{ margin-top:15px; color:#4f46e5; font-weight:bold; font-size:13px; } /* FOOTER */ footer{ background:#111827; color:white; text-align:center; padding:35px 20px; } footer p{ color:#9ca3af; font-size:13px; margin-top:8px; } .copy{ margin-top:20px; padding-top:18px; border-top:1px solid #374151; font-size:12px; color:#6b7280; } /* MOBILE */ @media(max-width:700px){ nav{ padding:0 20px; } nav div:last-child{ display:none; } .hero h1{ font-size:34px; } .subjects{ grid-template-columns:1fr 1fr; } .curriculum{ flex-direction:column; text-align:center; } } @media(max-width:480px){ .subjects{ grid-template-columns:1fr; } .search button{ padding:0 15px; } .hero{ padding-top:50px; } } </style> </head> <body> <!-- NAVBAR --> <nav> <div class="logo"> DK <span>Study Hub</span> </div> <div> <a href="#">Home</a> <a href="#subjects">Subjects</a> <a href="#about">About</a> </div> </nav> <!-- WELCOME --> <section class="hero"> <div class="tag"> 🎓 Class 11 • NEB • Nepal </div> <h1> Welcome to <span>DK Study Hub</span> </h1> <p> Your simple place for Class 11 study materials — notes, important questions, numericals, past questions and model questions. </p> <!-- SEARCH --> <div class="search"> <input id="searchInput" type="text" placeholder="Search notes, questions, chapters..." > <button onclick="searchSite()"> 🔍 Search </button> </div> <!-- SLIDER --> <div class="slider"> <div class="slide active"> <h2>📚 Complete Study Materials</h2> <p>Notes and resources organized subject-wise.</p> </div> <div class="slide"> <h2>⭐ Important Questions</h2> <p>Chapter-wise questions for exam preparation.</p> </div> <div class="slide"> <h2>🧮 Practice & Past Questions</h2> <p>Numericals, past papers and model questions.</p> </div> </div> </section> <!-- ABOUT --> <section class="container" id="about"> <div class="title"> <h2>📖 About DK Study Hub</h2> <p>Made to make Class 11 preparation easier.</p> </div> <div class="about"> <h3>Study Everything in One Place</h3> <p> DK Study Hub is a student-focused website for Class 11 NEB students. Find chapter-wise notes, important questions, numerical problems, past questions and model questions without searching through many different places. </p> </div> </section> <!-- CURRICULUM --> <section class="container"> <div class="title"> <h2>📘 Class 11 Curriculum</h2> <p>Check the syllabus before starting your preparation.</p> </div> <div class="curriculum"> <div> <h2>Class 11 NEB Curriculum</h2> <p> View or download the curriculum and syllabus. </p> </div> <div class="buttons"> <a href="curriculum.pdf" target="_blank" class="btn btn-white"> 📄 View PDF </a> <a href="curriculum.pdf" download class="btn btn-outline"> ⬇ Download </a> </div> </div> </section> <!-- SUBJECTS --> <section class="container" id="subjects"> <div class="title"> <h2>📚 All Subjects</h2> <p>Select your subject to continue.</p> </div> <div class="subjects"> <a href="physics.html" class="subject"> <div class="subject-icon">⚡</div> <h3>Physics</h3> <p> Notes, important questions, numericals, past questions and models. </p> <div class="arrow">View Physics →</div> </a> <a href="chemistry.html" class="subject"> <div class="subject-icon">🧪</div> <h3>Chemistry</h3> <p> Chapter-wise notes, questions, numericals and past papers. </p> <div class="arrow">View Chemistry →</div> </a> <a href="mathematics.html" class="subject"> <div class="subject-icon">📐</div> <h3>Mathematics</h3> <p> Notes, important questions, solutions and model questions. </p> <div class="arrow">View Mathematics →</div> </a> <a href="biology.html" class="subject"> <div class="subject-icon">🧬</div> <h3>Biology</h3> <p> Chapter-wise notes, diagrams, important questions and papers. </p> <div class="arrow">View Biology →</div> </a> <a href="english.html" class="subject"> <div class="subject-icon">📖</div> <h3>English</h3> <p> Notes, grammar, important questions and model questions. </p> <div class="arrow">View English →</div> </a> <a href="nepali.html" class="subject"> <div class="subject-icon">🇳🇵</div> <h3>Nepali</h3> <p> Notes, grammar, questions and exam preparation materials. </p> <div class="arrow">View Nepali →</div> </a> <a href="computer.html" class="subject"> <div class="subject-icon">💻</div> <h3>Computer Science</h3> <p> Theory, programming, important questions and model questions. </p> <div class="arrow">View Computer →</div> </a> <a href="other.html" class="subject"> <div class="subject-icon">📚</div> <h3>Other Subjects</h3> <p> Additional Class 11 study materials and resources. </p> <div class="arrow">View Subjects →</div> </a> </div> </section> <!-- FOOTER --> <footer> <h2>DK Study Hub</h2> <p> Class 11 NEB Notes • Questions • Numericals • Past Papers </p> <div class="copy"> © 2026 DK Study Hub. Made for Class 11 Students. </div> </footer> <script> /* SLIDER */ let slides = document.querySelectorAll(".slide"); let current = 0; setInterval(function(){ slides[current].classList.remove("active"); current++; if(current >= slides.length){ current = 0; } slides[current].classList.add("active"); },4000); /* SEARCH */ function searchSite(){ let value = document.getElementById("searchInput") .value .trim(); if(value === ""){ alert("Please enter something to search."); return; } /* Later we can connect this to a real website-wide search system. */ alert("Searching for: " + value); } </script> </body> </html> 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DK Study Hub | Class 11 NEB</title>
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* =========================
+           BODY
+        ========================= */
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f6f8fc;
+            color: #182033;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        nav {
+            height: 65px;
+            background: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 6%;
+
+            border-bottom: 1px solid #e8eaf0;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #4f46e5;
+        }
+
+        .logo span {
+            color: #182033;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+
+            margin-left: 25px;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           HERO / WELCOME
+        ========================= */
+
+        .hero {
+            min-height: 480px;
+
+            padding: 70px 20px 60px;
+
+            text-align: center;
+
+            background: linear-gradient(
+                135deg,
+                #eef2ff,
+                #f5f3ff
+            );
+        }
+
+        .tag {
+            display: inline-block;
+
+            background: #e0e7ff;
+            color: #4338ca;
+
+            padding: 8px 16px;
+
+            border-radius: 30px;
+
+            font-size: 13px;
+            font-weight: bold;
+
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 45px;
+            line-height: 1.15;
+
+            margin-bottom: 18px;
+        }
+
+        .hero h1 span {
+            color: #4f46e5;
+        }
+
+        .hero p {
+            max-width: 650px;
+
+            margin: auto;
+
+            color: #687386;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           SEARCH
+        ========================= */
+
+        .search {
+            max-width: 650px;
+            height: 58px;
+
+            background: white;
+
+            margin: 30px auto;
+
+            border-radius: 15px;
+
+            display: flex;
+            align-items: center;
+
+            padding: 6px;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .search input {
+            flex: 1;
+
+            height: 100%;
+
+            border: 0;
+            outline: 0;
+
+            padding: 0 15px;
+
+            font-size: 15px;
+        }
+
+        .search button {
+            height: 100%;
+
+            border: 0;
+
+            padding: 0 22px;
+
+            border-radius: 11px;
+
+            background: #4f46e5;
+            color: white;
+
+            cursor: pointer;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           SLIDER
+        ========================= */
+
+        .slider {
+            max-width: 900px;
+            height: 150px;
+
+            margin: 35px auto 0;
+
+            overflow: hidden;
+
+            border-radius: 20px;
+
+            position: relative;
+        }
+
+        .slide {
+            height: 150px;
+
+            display: none;
+
+            align-items: center;
+            justify-content: center;
+
+            flex-direction: column;
+
+            color: white;
+
+            padding: 20px;
+        }
+
+        .slide.active {
+            display: flex;
+        }
+
+        .slide h2 {
+            margin-bottom: 8px;
+        }
+
+        .slide p {
+            opacity: 0.9;
+        }
+
+        .slide:nth-child(1) {
+            background: linear-gradient(
+                135deg,
+                #4f46e5,
+                #7c3aed
+            );
+        }
+
+        .slide:nth-child(2) {
+            background: linear-gradient(
+                135deg,
+                #0f766e,
+                #14b8a6
+            );
+        }
+
+        .slide:nth-child(3) {
+            background: linear-gradient(
+                135deg,
+                #c2410c,
+                #f97316
+            );
+        }
+
+
+        /* =========================
+           CONTAINER
+        ========================= */
+
+        .container {
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding: 60px 20px;
+        }
+
+        .title {
+            text-align: center;
+
+            margin-bottom: 35px;
+        }
+
+        .title h2 {
+            font-size: 29px;
+        }
+
+        .title p {
+            color: #70798a;
+
+            margin-top: 8px;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            background: white;
+
+            border-radius: 20px;
+
+            padding: 35px;
+
+            text-align: center;
+
+            border: 1px solid #e8eaf0;
+        }
+
+        .about p {
+            max-width: 750px;
+
+            margin: 15px auto 0;
+
+            color: #687386;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           CURRICULUM
+        ========================= */
+
+        .curriculum {
+            background: linear-gradient(
+                135deg,
+                #111827,
+                #273449
+            );
+
+            color: white;
+
+            padding: 35px;
+
+            border-radius: 20px;
+
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 20px;
+        }
+
+        .curriculum p {
+            color: #cbd5e1;
+
+            margin-top: 8px;
+        }
+
+        .buttons {
+            display: flex;
+
+            gap: 10px;
+        }
+
+        .btn {
+            text-decoration: none;
+
+            padding: 13px 18px;
+
+            border-radius: 10px;
+
+            font-size: 14px;
+
+            font-weight: bold;
+        }
+
+        .btn-white {
+            background: white;
+
+            color: #111827;
+        }
+
+        .btn-outline {
+            border: 1px solid #64748b;
+
+            color: white;
+        }
+
+
+        /* =========================
+           SUBJECTS
+        ========================= */
+
+        .subjects {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+        .subject {
+            background: white;
+
+            border: 1px solid #e8eaf0;
+
+            border-radius: 18px;
+
+            padding: 24px;
+
+            text-decoration: none;
+
+            color: #182033;
+
+            transition: 0.25s;
+        }
+
+        .subject:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 12px 30px
+                rgba(0, 0, 0, 0.08);
+        }
+
+        .subject-icon {
+            width: 52px;
+            height: 52px;
+
+            border-radius: 14px;
+
+            background: #eef2ff;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 27px;
+
+            margin-bottom: 15px;
+        }
+
+        .subject h3 {
+            margin-bottom: 7px;
+        }
+
+        .subject p {
+            color: #737c8c;
+
+            font-size: 13px;
+
+            line-height: 1.5;
+        }
+
+        .arrow {
+            margin-top: 15px;
+
+            color: #4f46e5;
+
+            font-weight: bold;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #111827;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 35px 20px;
+        }
+
+        footer p {
+            color: #9ca3af;
+
+            font-size: 13px;
+
+            margin-top: 8px;
+        }
+
+        .copy {
+            margin-top: 20px;
+
+            padding-top: 18px;
+
+            border-top: 1px solid #374151;
+
+            font-size: 12px;
+
+            color: #6b7280;
+        }
+
+
+        /* =========================
+           TABLET / MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 0 20px;
+            }
+
+            nav div:last-child {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .subjects {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .curriculum {
+                flex-direction: column;
+
+                text-align: center;
+            }
+        }
+
+
+        /* =========================
+           SMALL MOBILE
+        ========================= */
+
+        @media (max-width: 480px) {
+
+            .subjects {
+                grid-template-columns: 1fr;
+            }
+
+            .search button {
+                padding: 0 15px;
+            }
+
+            .hero {
+                padding-top: 50px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <nav>
+
+        <div class="logo">
+            DK
+            <span>Study Hub</span>
+        </div>
+
+        <div>
+
+            <a href="#">
+                Home
+            </a>
+
+            <a href="#subjects">
+                Subjects
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         WELCOME / HERO
+    ========================= -->
+
+    <section class="hero">
+
+        <div class="tag">
+            🎓 Class 11 • NEB • Nepal
+        </div>
+
+        <h1>
+            Welcome to
+            <span>DK Study Hub</span>
+        </h1>
+
+        <p>
+            Your simple place for Class 11 study materials —
+            notes, important questions, numericals,
+            past questions and model questions.
+        </p>
+
+
+        <!-- SEARCH -->
+
+        <div class="search">
+
+            <input
+                id="searchInput"
+                type="text"
+                placeholder="Search notes, questions, chapters..."
+            >
+
+            <button onclick="searchSite()">
+                🔍 Search
+            </button>
+
+        </div>
+
+
+        <!-- SLIDER -->
+
+        <div class="slider">
+
+            <div class="slide active">
+
+                <h2>
+                    📚 Complete Study Materials
+                </h2>
+
+                <p>
+                    Notes and resources organized subject-wise.
+                </p>
+
+            </div>
+
+
+            <div class="slide">
+
+                <h2>
+                    ⭐ Important Questions
+                </h2>
+
+                <p>
+                    Chapter-wise questions for exam preparation.
+                </p>
+
+            </div>
+
+
+            <div class="slide">
+
+                <h2>
+                    🧮 Practice & Past Questions
+                </h2>
+
+                <p>
+                    Numericals, past papers and model questions.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section
+        class="container"
+        id="about"
+    >
+
+        <div class="title">
+
+            <h2>
+                📖 About DK Study Hub
+            </h2>
+
+            <p>
+                Made to make Class 11 preparation easier.
+            </p>
+
+        </div>
+
+
+        <div class="about">
+
+            <h3>
+                Study Everything in One Place
+            </h3>
+
+            <p>
+                DK Study Hub is a student-focused website
+                for Class 11 NEB students. Find chapter-wise
+                notes, important questions, numerical problems,
+                past questions and model questions without
+                searching through many different places.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CURRICULUM
+    ========================= -->
+
+    <section class="container">
+
+        <div class="title">
+
+            <h2>
+                📘 Class 11 Curriculum
+            </h2>
+
+            <p>
+                Check the syllabus before starting your preparation.
+            </p>
+
+        </div>
+
+
+        <div class="curriculum">
+
+            <div>
+
+                <h2>
+                    Class 11 NEB Curriculum
+                </h2>
+
+                <p>
+                    View or download the curriculum and syllabus.
+                </p>
+
+            </div>
+
+
+            <div class="buttons">
+
+                <a
+                    href="curriculum.pdf"
+                    target="_blank"
+                    class="btn btn-white"
+                >
+                    📄 View PDF
+                </a>
+
+                <a
+                    href="curriculum.pdf"
+                    download
+                    class="btn btn-outline"
+                >
+                    ⬇ Download
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SUBJECTS
+    ========================= -->
+
+    <section
+        class="container"
+        id="subjects"
+    >
+
+        <div class="title">
+
+            <h2>
+                📚 All Subjects
+            </h2>
+
+            <p>
+                Select your subject to continue.
+            </p>
+
+        </div>
+
+
+        <div class="subjects">
+
+
+            <!-- PHYSICS -->
+
+            <a
+                href="physics.html"
+                class="subject"
+            >
+
+                <div class="subject-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Physics
+                </h3>
+
+                <p>
+                    Notes, important questions, numericals,
+                    past questions and models.
+                </p>
+
+                <div class="arrow">
+                    View Physics →
+                </div>
+
+            </a>
+
+
+            <!-- CHEMISTRY -->
+
+            <a
+                href="chemistry.html"
+                class="subject"
+            >
+
+                <div class="subject-icon">
+                    🧪
+                </div>
+
+                <h3>
+                    Chemistry
+                </h3>
+
+                <p>
+                    Chapter-wise notes, questions,
+                    numericals and past papers.
+                </p>
+
+                <div class="arrow">
+                    View Chemistry →
+                </div>
+
+            </a>
+
+
+            <!-- MATHEMATICS -->
+
+            <a
+                href="mathematics.html"
+                class="subject"
+            >
+
+                <div class="subject-icon">
+                    📐
+                </div>
+
+                <h3>
+                    Mathematics
+                </h3>
+
+                <p>
+                    Notes, important questions,
+                    solutions and model questions.
+                </p>
+
+                <div class="arrow">
+                    View Mathematics →
+                </div>
+
+            </a>
+
+
+            <!-- BIOLOGY -->
+
+            <a
+                href="biology.html"
+                class="subject"
+            >
+
+                <div class="subject-icon">
+                    🧬
+                </div>
+
+                <h3>
+                    Biology
+                </h3>
+
+                <p>
+                    Chapter-wise notes, diagrams,
+                    important questions and papers.
+                </p>
+
+                <div class="arrow">
+                    View Biology →
+                </div>
+
+            </a>
+
+
+            <!-- ENGLISH -->
+
+            <a
+                href="english.html"
+                class="subject"
+            >
+
+                <div class="subject-icon">
+                    📖
+                </div>
+
+                <h3>
+                    English
+                </h3>
+
+                <p>
+                    Notes, grammar, important questions
+                    and model questions.
+                </p>
+
+                <div class="arrow">
+                    View English →
+                </div>
+
+            </a>
+
+
+            <!-- NEPALI -->
+
+            <a
+                href="nepali.html"
+                class="subject"
+            >
+
+                <div class="subject-icon">
+                    🇳🇵
+                </div>
+
+                <h3>
+                    Nepali
+                </h3>
+
+                <p>
+                    Notes, grammar, questions and
+                    exam preparation materials.
+                </p>
+
+                <div class="arrow">
+                    View Nepali →
+                </div>
+
+            </a>
+
+
+            <!-- COMPUTER -->
+
+            <a
+                href="computer.html"
+                class="subject"
+            >
+
+                <div class="subject-icon">
+                    💻
+                </div>
+
+                <h3>
+                    Computer Science
+                </h3>
+
+                <p>
+                    Theory, programming, important
+                    questions and model questions.
+                </p>
+
+                <div class="arrow">
+                    View Computer →
+                </div>
+
+            </a>
+
+
+            <!-- OTHER SUBJECTS -->
+
+            <a
+                href="other.html"
+                class="subject"
+            >
+
+                <div class="subject-icon">
+                    📚
+                </div>
+
+                <h3>
+                    Other Subjects
+                </h3>
+
+                <p>
+                    Additional Class 11 study materials
+                    and resources.
+                </p>
+
+                <div class="arrow">
+                    View Subjects →
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <h2>
+            DK Study Hub
+        </h2>
+
+        <p>
+            Class 11 NEB Notes • Questions •
+            Numericals • Past Papers
+        </p>
+
+        <div class="copy">
+            © 2026 DK Study Hub.
+            Made for Class 11 Students.
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+
+        /* =========================
+           SLIDER
+        ========================= */
+
+        let slides =
+            document.querySelectorAll(".slide");
+
+        let current = 0;
+
+
+        setInterval(function () {
+
+            slides[current]
+                .classList
+                .remove("active");
+
+            current++;
+
+
+            if (current >= slides.length) {
+
+                current = 0;
+
+            }
+
+
+            slides[current]
+                .classList
+                .add("active");
+
+        }, 4000);
+
+
+
+        /* =========================
+           SEARCH
+        ========================= */
+
+        function searchSite() {
+
+            let value =
+                document
+                    .getElementById("searchInput")
+                    .value
+                    .trim();
+
+
+            if (value === "") {
+
+                alert(
+                    "Please enter something to search."
+                );
+
+                return;
+
+            }
+
+
+            /*
+                Later we can connect this
+                to a real website-wide
+                search system.
+            */
+
+            alert(
+                "Searching for: " + value
+            );
+
+        }
+
+    </script>
+
+</body>
+
+</html>
